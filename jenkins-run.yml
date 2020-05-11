@@ -1,0 +1,8 @@
+- hosts: all
+  become: true
+  vars:
+    jenkins_hostname: "{{ play_hosts[0] }}"
+  ### Install plugins from group_vars/all
+  roles:
+    - role: geerlingguy.jenkins
+  post_tasks:
